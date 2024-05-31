@@ -1,0 +1,23 @@
+{
+  "name": "@darcy-cli-dev/core",
+  "version": "1.0.0",
+  "description": "darcy-cli-dev core",
+  "author": "lizhi <lz.zou@huazhutong.com>",
+  "homepage": "",
+  "license": "ISC",
+  "main": "lib/core.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "test": "node ./__tests__/core.test.js"
+  },
+  "dependencies": {
+    "darcy-cli": "^1.0.0",
+    "react": "^18.3.1",
+    "react-router": "^6.23.1"
+  }
+}

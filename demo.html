@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let source = {
+        "node0.qwater": "0.100",
+        "node0.cs": "1.000",
+        "node0.sj": "1",
+        "node0.runSeconds": "1",
+        "node1.qwater": "0.000",
+        "node1.cs": "0.000",
+        "node1.sj": "0",
+        "node1.runSeconds": "0",
+      };
+      let target = [
+        {
+          nodeNum: 0,
+          node: {
+            "qwater": "0.000",
+            " cs": "0.000",
+            " sj": "0",
+            " runSeconds": "0",
+          },
+        },
+        {
+          nodeNum: 1,
+          node: {
+            "qwater": "0.000",
+            " cs": "0.000",
+            " sj": "0",
+            " runSeconds": "0",
+          },
+        },
+      ];
+      function trans(source) {
+        let target = [];
+        // 用来存nodeNum，可以去重
+        let keySet = new Set();
+        // 用来存每个nodeNum下面的值
+        let nodeObj={}
+        // 遍历对象，拿到nodeNum，和nodeObj
+        for (let key in source) {
+          let keyArr = key.split(".");
+          let nodeNum = keyArr[0];
+          nodeNum && keySet.add(nodeNum);
+          if(nodeObj[nodeNum]){
+            nodeObj[nodeNum][keyArr[1]] = source[key];
+          }else{
+            nodeObj[nodeNum] = {}
+            nodeObj[nodeNum][keyArr[1]] = source[key];
+          }
+        }
+
+        for(let item of keySet){
+          let nodeNum = item.replace("node","");
+          let node = nodeObj[item];
+          target.push({nodeNum,node})
+        }
+        console.log(source,"source");
+        console.log(target,"target");
+        return target;
+      }
+      trans(source);
+    </script>
+  </body>
+</html>

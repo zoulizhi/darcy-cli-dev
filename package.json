@@ -1,0 +1,19 @@
+{
+  "name": "darcy-cli-dev",
+  "version": "1.0.0",
+  "workspaces": [
+    "packages/core",
+    "packages/utils"
+  ],
+  "description": "darcy-cli-dev",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "lerna": "^8.1.3"
+  }
+}
