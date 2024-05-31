@@ -16,3 +16,4 @@ lerna-debug.log*
 .pnp.loader.mjs
 .pnp.cjs
 packages/**/node_modules/
+lerna-debug.log

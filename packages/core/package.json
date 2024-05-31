@@ -19,5 +19,6 @@
     "darcy-cli": "^1.0.0",
     "react": "^18.3.1",
     "react-router": "^6.23.1"
-  }
+  },
+  "gitHead": "6c5f3e6d23cba23319533c390db711d542b1b5c3"
 }
